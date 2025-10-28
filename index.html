@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./img/favicon.png">
+
+    <title>Yves's Fotogramm</title>
+  
+  </head>
+
+  <body onload="renderPictureContainer()">
+  
+    <header>
+      <img src="./img/fotogram-logo.svg" alt="the Logo of my Website"/>
+    </header>
+  
+    <main>
+    
+      <h1>Memorable Moments</h1>
+    
+      <section id="pictureContainer">
+        <!-- added via jscript -->
+      </section>
+
+      <!-- Dialog for Pic-View -->
+      <dialog id="overlay">
+        <h2 id="overlayTitle"></h2>
+        <img id="overlayPic">
+        <button title="closing button" id="close_button" onclick="closeOverlay()">X</button>
+        <button title="preview button" id="pre_button" onclick="prevImage()">Zurück</button>
+        <button title="next button" id="next_button" onclick="nextImage()">Weiter</button>
+      </dialog>
+    
+    </main>
+  
+    <footer>
+
+      <h3>Copyright by Yves Gildemeister</h3>
+
+    </footer>
+
+  </body>
+
+  <script type="text/javascript" src="./script.js" defer></script>
+
+</html>

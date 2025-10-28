@@ -1,0 +1,227 @@
+/* Global-Attributes */
+h2 {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  margin: 0;
+  color: #16384e;
+}
+
+
+/* Page-specific attributes */
+    header {
+      display: flex;
+      align-items: center;
+      
+      width: 100%;
+      max-width: 1920px;
+      height: 80px;
+      z-index: 1;
+
+      background-color: #061f2e;
+      border-bottom: 3px groove #1986C8;
+      box-shadow: 3px 3px 15px 10px rgba(0,0,0,0.6);
+    }
+
+        header img {
+          width: 150px;
+          padding-left: 32px;
+        }
+
+
+
+    main {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+      max-width: 1920px;
+      height: calc(100vh - 206px);
+      overflow-y: auto;
+
+      background: #FFFFFF;
+      background: -moz-linear-gradient(45deg, #FFFFFF 0%, #1FADE7 100%, #1986C8 100%);
+      background: linear-gradient(45deg, #FFFFFF 0%, #1FADE7 100%, #1986C8 100%);
+      background-size: cover;
+      background-position: center;
+    }
+
+        /* JScript-Container */
+        section {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+
+          min-height: 600px;
+          padding: 24px;
+          gap: 24px;
+        }
+            .CollectionContainer {
+              background-color: rgba(255, 255, 255, 0);
+              border: none;
+            }
+    
+            .CollectionContainer img {
+              width: 300px;
+              height: 200px;
+              object-fit: cover;
+              cursor: pointer;
+
+              border: 3px groove #1986C8;
+              border-radius: 10px;
+              transition: transform 0.3s ease;
+            }
+
+                .CollectionContainer img:hover {
+                    transform: scale(1.05);
+                }
+        
+        /* Overlay-Dialog */
+        dialog {
+          width: 600px;
+          height: 550px;
+          gap: 24px;
+          
+          color: aliceblue;
+          background-color: #061f2e;
+          border: 3px groove #1986C8;
+          border-radius: 10px;
+          transition: transform 0.3s ease;
+          transform: translateX(200%);
+        }
+
+            dialog.Opened {
+              transform: translateX(0%);
+            }
+
+            dialog.Remove {
+              transform: translateX(-200%);
+            }
+
+                dialog::backdrop {
+                  background-color: #061f2e;
+                  opacity: 0%;
+                  transition: all 0.3s ease;
+                }
+
+                    dialog.Opened::backdrop {
+                      opacity: 60%;
+                      transition: all 0.3s ease;
+                    }
+
+                    dialog.Remove::backdrop {
+                      opacity: 0%;
+                      transition: all 0.3s ease;
+                    }
+
+            dialog img {
+              width: 550px;
+              height: 480px;
+              object-fit: contain;
+            }
+            
+            dialog button {
+              min-width: 48px;
+              cursor: pointer;
+
+              background: #FFFFFF;
+              background: -moz-linear-gradient(45deg, #FFFFFF 0%, #1FADE7 100%, #1986C8 100%);
+              background: linear-gradient(45deg, #FFFFFF 0%, #1FADE7 100%, #1986C8 100%);
+              background-size: cover;
+              background-position: center;
+              border: 2px groove #1986C8;
+              border-radius: 5px;
+              transition: transform 0.2s ease;
+            }
+
+                dialog button:hover {
+                  transform: scale(1.1);
+                }
+
+            #close_button {
+              position: absolute;
+              top: 24px;
+              right: 24px;
+            }
+            
+            #pre_button {
+              position: absolute;
+              bottom: 24px;
+              left: 24px;
+            }
+            
+            #next_button {
+              position: absolute;
+              bottom: 24px;
+              right: 24px;
+            }
+
+
+    
+    /* Footer */
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        max-width: 1920px;
+        height: 120px;
+        
+        color: aliceblue;
+        background-color: #061f2e;
+        border-top: 3px groove #1986C8;
+        box-shadow: 3px 3px 10px 5px rgba(0,0,0,0.6);
+    }
+
+
+
+
+@media (max-width: 680px) {
+  
+    dialog {
+      width: 88%;
+    }
+
+        dialog img {
+          width: 95%;
+        }
+
+}
+
+@media (max-height: 660px) {
+
+    header {
+      height: 50px;
+    }
+
+
+
+    main {
+      height: calc(100vh - 116px);
+    }
+
+        dialog {
+          height: 83%;
+          overflow-y: hidden;
+        }
+
+            dialog img {
+              padding-top: 12px;
+              height: 80%;
+            }
+
+
+
+    footer {
+      height: 60px;
+    }
+
+}
